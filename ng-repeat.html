@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="sankhyaApp">
+<head>
+	<title>AngularJS Project - Sankhya</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="container" ng-controller="TesteCtrl">
+		<h1>Loop from scope and filters</h1>
+		<input type="text" ng-model="filterName" placeholder="Enter name to filter">
+		<ul>
+			<li ng-repeat="member in members | filter:filterName | orderBy:city">{{ member.name | uppercase }} - {{ member.city }}</li>
+		</ul>
+	</div>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="js/sankhya-app.js"></script>
+</body>
+</html>
